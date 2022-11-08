@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Login</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .wrapper {
+                @apply flex flex-col items-center justify-center h-screen gap-4 text-sm bg-gradient-to-r from-cyan-500 to-blue-500;
+            }
+
+            .card {
+                @apply bg-white rounded-md shadow-lg p-4 w-[400px] flex flex-col gap-4 border border-white;
+            }
+
+            .input {
+                @apply w-full border border-gray-300 rounded-md py-2 px-3 text-sm;
+            }
+
+            .link {
+                @apply text-blue-500;
+            }
+
+            .label {
+                @apply text-gray-500;
+            }
+
+            .social-login-button {
+                @apply flex items-center justify-center gap-2 rounded-md py-2 px-3 bg-white border border-gray-200 relative transition ease-in-out text-gray-700;
+
+            }
+            .social-login-button:hover {
+                @apply border-gray-300 bg-gray-50;
+            }
+
+            .small-text {
+                @apply text-gray-400
+            }
+
+            .login-button {
+                @apply bg-blue-500 flex items-center justify-center text-white rounded-md py-2 px-3 text-sm;
+            }
+        }
+      </style>
+</head>
+
+<body class="wrapper">
+    <!-- Logo -->
+    <img src="/public/images/logo.svg" alt="Logo" class="w-[200px] mb-10">
+
+    <div class="card">
+        <!-- Heading -->
+        <h2 class="font-light text-gray-700 text-center text-lg pb-4 border-b border-gray-100">
+            Masuk dengan akun Anda
+        </h2>
+
+        <form class="flex flex-col gap-4">
+            <!-- InputUsername -->
+            <div class="flex flex-col gap-1">
+                <label class="label" for="username">Username</label>
+                <input class="input" id="username" type="text" placeholder="Ketikan username" />
+            </div>
+
+            <!-- InputPassword -->
+            <div class="flex flex-col gap-1">
+                <label class="label" for="password">Password</label>
+                <input class="input" id="password" type="password" placeholder="Ketikan password" />
+            </div>
+
+            <div class="flex items-center justify-between">
+                <!-- RemembermeCheckbox -->
+                <checkbox class="gap-2 flex items-center">
+                    <input type="checkbox" id="remember" />
+                    <label class="label" for="remember">Remember me</label>
+                </checkbox>
+
+                <!-- ForgotPasswordLink -->
+                <a class="link" href="#">Lupa password?</a>
+            </div>
+
+            <!-- LoginButton -->
+            <button class="login-button">Login</button>
+
+            <!-- SmallText -->
+            <small class="small-text text-center">atau login dengan</small>
+
+            <!-- GoogleLogin -->
+            <button class="social-login-button" type="submit">
+                <img class="absolute left-2" src="/public/images/google.svg" alt="Google" width="20" height="20">
+                <span>Google</span>
+            </button>
+        </form>
+
+        <!-- RegisterMessage -->
+        <div class="flex gap-1 items-center justify-center">
+            <p class="text-xs">Pengguna baru?</p>
+            <a class="link text-xs" href="#">daftar disini</a>
+        </div>
+    </div>
+
+    <!-- Copyright -->
+    <small class="small-text mt-8 !text-gray-200">Copyright 2022. Edumatic Internasional</small>
+</body>
+
+</html>
